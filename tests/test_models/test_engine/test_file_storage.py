@@ -5,7 +5,6 @@ from models.base_model import BaseModel
 from models import storage
 import os
 
-
 class test_fileStorage(unittest.TestCase):
     """ Class to test the file storage method """
 
@@ -16,14 +15,12 @@ class test_fileStorage(unittest.TestCase):
             del_list.append(key)
         for key in del_list:
             del storage._FileStorage__objects[key]
-
-    def tearDown(self):
+   def tearDown(self):
         """ Remove storage file at end of tests """
         try:
             os.remove('file.json')
-        except:
-            pass
-
+      except:
+      pass
     def test_obj_list_empty(self):
         """ __objects is initially empty """
         self.assertEqual(len(storage.all()), 0)
