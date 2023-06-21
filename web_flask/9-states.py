@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This starts a Flask web application.
+"""Starts a Flask web application.
 The application listens on 0.0.0.0, port 5000.
 Routes:
     /states: HTML page with a list of all State objects.
@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route("/states", strict_slashes=False)
 def states():
-    """This displays an HTML page with a list of all States.
+    """Displays an HTML page with a list of all States.
     States are sorted by name.
     """
     states = storage.all("State")
@@ -23,7 +23,7 @@ def states():
 
 @app.route("/states/<id>", strict_slashes=False)
 def states_id(id):
-    """This displays an HTML page with info about <id>, if it exists."""
+    """Displays an HTML page with info about <id>, if it exists."""
     for state in storage.all("State").values():
         if state.id == id:
             return render_template("9-states.html", state=state)
