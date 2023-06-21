@@ -5,12 +5,11 @@ from models.engine.file_storage import FileStorage
 from models.state import State
 
 fs = FileStorage()
-
 # All States
 all_states = fs.all(State)
 print("All States: {}".format(len(all_states.keys())))
 for state_key in all_states.keys():
-    print(all_states[state_key])
+print(all_states[state_key])
 
 # Create a new State
 new_state = State()
@@ -23,7 +22,7 @@ print("New State: {}".format(new_state))
 all_states = fs.all(State)
 print("All States: {}".format(len(all_states.keys())))
 for state_key in all_states.keys():
-    print(all_states[state_key])
+print(all_states[state_key])
 
 # Create another State
 another_state = State()
