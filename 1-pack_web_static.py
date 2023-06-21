@@ -4,7 +4,6 @@ import os
 from datetime import datetime
 from fabric.api import local, runs_once
 
-
 @runs_once
 def do_pack():
     """Archives the static files."""
@@ -12,12 +11,12 @@ def do_pack():
         os.mkdir("versions")
     d_time = datetime.now()
     output = "versions/web_static_{}{}{}{}{}{}.tgz".format(
-        d_time.year,
-        d_time.month,
-        d_time.day,
-        d_time.hour,
-        d_time.minute,
-        d_time.second
+    d_time.year,
+    d_time.month,
+    d_time.day,
+    d_time.hour,
+    d_time.minute,
+    d_time.second
     )
     try:
         print("Packing web_static to {}".format(output))
