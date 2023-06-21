@@ -14,7 +14,6 @@ storage_t = getenv("HBNB_TYPE_STORAGE")
 
 class test_Amenity(test_basemodel):
     """ """
-
     def __init__(self, *args, **kwargs):
         """ """
         super().__init__(*args, **kwargs)
@@ -26,7 +25,6 @@ class test_Amenity(test_basemodel):
         new = self.value()
         self.assertEqual(type(new.name), str)
 
-
 class Test_PEP8(unittest.TestCase):
     """test User"""
     def test_pep8_user(self):
@@ -34,8 +32,7 @@ class Test_PEP8(unittest.TestCase):
         pep8style = pycodestyle.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/amenity.py'])
         self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
-
+        "Found code style errors (and warnings).")
 
 class test_inherit_basemodel(unittest.TestCase):
     """Test if user inherit from BaseModel"""
@@ -45,7 +42,6 @@ class test_inherit_basemodel(unittest.TestCase):
         self.assertIsInstance(user, Amenity)
         self.assertTrue(issubclass(type(user), BaseModel))
         self.assertEqual(str(type(user)), "<class 'models.amenity.Amenity'>")
-
 
 class test_Amenity_BaseModel(unittest.TestCase):
     """Testing user class"""
