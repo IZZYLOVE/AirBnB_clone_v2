@@ -10,10 +10,12 @@ import os
 env.hosts = ["52.91.121.146", "3.85.136.181"]
 env.user = "ubuntu"
 
+
 def do_pack():
     """
-    return the archive path if archive has generated correctly.
+        return the archive path if archive has generated correctly.
     """
+
     local("mkdir -p versions")
     date = datetime.now().strftime("%Y%m%d%H%M%S")
     archived_f_path = "versions/web_static_{}.tgz".format(date)
@@ -23,6 +25,8 @@ def do_pack():
         return archived_f_path
     else:
         return None
+
+
 def do_deploy(archive_path):
     """
         Distribute archive.
@@ -44,4 +48,5 @@ def do_deploy(archive_path):
 
         print("New version deployed!")
         return True
+
     return False
